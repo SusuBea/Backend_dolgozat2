@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\WinningsFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,8 +15,22 @@ class brands extends Model
 
     protected $fillable = [
         'name',
-        'country',
+        'country',  
     ];
 
 
+
+    public function brandWinningAll(){
+
+        return $this -> hasMany(winnings::class,  'brand_id', 'brand_id');
+    
+    
+    }
+
+
+
 }
+
+
+
+

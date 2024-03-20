@@ -27,4 +27,25 @@ class winnings extends Model
         'product_id',
         'date',
     ];
+
+    public function brandWinningAll(){
+
+        return $this -> hasMany(winnings::class,  'brand_id', 'brand_id');
+    
+    
+    }
+
+
+    //1.Az adott márkához (paraméter az elsődleges kulcs) tartozó összes győzelem adatait jelenítsd meg!
+    //public function brandWinningAll(){
+
+        //return $this -> hasMany(winnings::class,  'brand_id', 'brand_id');
+    
+    
+    //}
+
+
+
+  
+
 }

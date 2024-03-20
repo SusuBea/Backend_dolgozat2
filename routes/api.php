@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\PartsController;
+use App\Http\Controllers\WinningController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +28,12 @@ Route::post('parts', [PartsController::class , 'store']);
 
 Route::put('parts/{id}', [PartsController::class , 'update']);
 Route::delete('parts/{id}', [PartsController::class , 'destroy']);
+
+
+Route::get('brandWinningAll/{brand_id}', [WinningController::class , 'brandWinningAll']);
+
+Route::get('winnings/{id}', [WinningController::class , 'show']);  
+Route::get('winnings', [WinningController::class , 'index']);  
+
+Route::get('brands/{id}', [BrandController::class , 'show']);  
+Route::get('brands', [BrandController::class , 'index']);  
